@@ -1,0 +1,162 @@
+<signup>:
+    MDFloatLayout:
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint: {"center_y": .96}
+            theme_icon_color: "Custom"
+            icon_color:  0.7450980392156863,0.0901960784313725,0.0156862745098039,1
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "main"
+        
+        MDLabel:
+            text: "Hi!"
+            font_name: "fonts/Poppins/Poppins-Bold.ttf"
+            pos_hint: {"center_x":.66,"center_y":.88}
+            font_size: "30sp"
+        
+        MDLabel:
+            text: "Create a new account"
+            font_name: "fonts/Poppins/Poppins-Medium.ttf"
+            pos_hint: {"center_x":.66,"center_y":.82}
+            font_size: "14sp"
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .55, "center_y":.70}
+            TextInput:
+                id: username_signin
+                size_hint_y: .75
+                background_color: 1,1,1,0
+                foreground_color: rgba(190,23,4,255)
+                cursor_color: rgba(0,0,59,255)
+                cursor_width: "2sp"
+                font_size: "14sp"
+                hint_text: "Username"
+                pos_hint: {"center_x": .43, "center_y":.5}
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .55, "center_y":.60}
+            TextInput:
+                id: email_signin
+                size_hint_y: .75
+                background_color: 1,1,1,0
+                foreground_color: rgba(190,23,4,255)
+                cursor_color: rgba(0,0,59,255)
+                cursor_width: "2sp"
+                font_size: "14sp"
+                hint_text: "Email"
+                pos_hint: {"center_x": .43, "center_y":.5}
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .55, "center_y":.50}
+            TextInput:
+                id: password_signin
+                size_hint_y: .75
+                background_color: 1,1,1,0
+                foreground_color: rgba(190,23,4,255)
+                cursor_color: rgba(0,0,59,255)
+                cursor_width: "2sp"
+                font_size: "14sp"
+                hint_text: "Password"
+                pos_hint: {"center_x": .43, "center_y":.5}
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .45, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+
+        MDLabel:
+            id: labelErrorSignin
+            text: ""
+            font_name: "fonts/Poppins/Poppins-Medium.ttf"
+            pos_hint: {"center_x":0.67,"center_y":0.45}
+            font_size: "12sp"
+            color: rgba(190,23,4,255)
+
+        Button:
+            text: "Sing In"
+            background_color: 0,0,0,0
+            pos_hint: {"center_x":.5, "center_y": .38}
+            font_size: "14sp"
+            size_hint: 0.65, 0.065
+            canvas.before:
+                Color:
+                    rgb: rgba(190,23,4,1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+            on_release: root.signupUser()
+        MDLabel:
+            text: "or"
+            font_name: "fonts/Poppins/Poppins-Medium.ttf"
+            pos_hint: {"center_y":.25}
+            font_size: "14sp"
+            halign: "center"
+            color: rgba(190,23,4,255)
+
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .3, .002
+            pos_hint: {"center_x":.3,"center_y":.247}
+        MDFloatLayout:
+            md_bg_color: rgba(178,178,178,255)
+            size_hint: .3, .002
+            pos_hint: {"center_x":.7,"center_y":.247}
+
+        MDLabel:
+            text: "Social Media Login"
+            font_name: "fonts/Poppins/Poppins-Light.ttf"
+            pos_hint: {"center_y":.19}
+            font_size: "12sp"
+            halign: "center"
+
+        MDGridLayout:
+            cols: 3
+            size_hint: .48, .07
+            pos_hint: {"center_x":.57, "center_y":.14}
+            MDIconButton:
+                icon: "google"
+                theme_icon_color: "Custom"
+                icon_color: "red"
+            MDIconButton:
+                icon: "facebook"
+                theme_icon_color: "Custom"
+                icon_color: "blue"
+
+            MDIconButton:
+                icon: "apple"
+                theme_icon_color: "Custom"
+                icon_color: "black"
+
+        MDLabel:
+            text: "Have already any account?"
+            font_name: "fonts/Poppins/Poppins-Light.ttf"
+            pos_hint: {"center_x":.70,"center_y":.05}
+            font_size: "12sp"
+
+        MDTextButton:
+            text: "Log in?"
+            font_size: "12sp"
+            pos_hint: {"center_x":.65,"center_y":.05}
+            font_name: "fonts/Poppins/Poppins-Light.ttf"
+            color: rgba(68,78,132,255)
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "loginup"
+        
